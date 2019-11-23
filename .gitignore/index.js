@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 bot.on('message', message => {
     if(message.content.startsWith('!dmall')){
-        if(message.author.id == "551751042488991744"){
+        if(message.author.id == "572346751051104266"){
             msg=message.content.slice(7)
             var Count;
             for(Count in bot.users.array()){
