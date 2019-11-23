@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 bot.on('message', message => {
     if(message.content.startsWith('!dmall')){
-        if(message.member.has("ADMINISTRATOR")){
+        if(message.member.hasPermission("ADMINISTRATOR")){
             msg=message.content.slice(7)
             var Count;
-            for(Count in bot.users.array()){
-                var User = bot.users.array()[Count];
-                bot.users.get(User.id).send(msg);
+            for(Count in message.guild.members.array()){
+                var User = message.guild.members.array()[Count];
+                message.guild.members.get(User.id).send(msg);
             }
             
         }
